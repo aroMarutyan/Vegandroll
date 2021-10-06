@@ -25,7 +25,6 @@ const controlRecipes = async function () {
     // 2 Render bookmarks
     // debugger; //very useful method for following execution step-by-step
     bookmarksView.render(model.state.bookmarks); //Solution to the debugger problem. Not the best
-    // bookmarksView.update(model.state.bookmarks);
 
     // 3 Update results view to mark selected search result
     resultsView.update(model.getSearchResultsPage());
@@ -127,10 +126,6 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
-const newFeature = () => {
-  console.log('Welcome to the show!');
-};
-
 const init = function () {
   model.restoreBookmarks();
   // bookmarksView.addHandlerRender(controlBookmarks);
@@ -140,6 +135,5 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
-  newFeature();
 };
 init();
